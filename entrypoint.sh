@@ -1,3 +1,11 @@
 #!/bin/sh -l
-USERNAME = $1
-curl -d '{"username": "'"$USERNAME"'", "name":"Kit Plummer"}' -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/
+generate_post_data()
+{
+  cat <<EOF
+{
+  "username":"$GITHUB_ACTOR",
+  "name":"Pat Johnson"
+}
+EOF
+}
+curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/

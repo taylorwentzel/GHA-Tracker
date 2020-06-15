@@ -4,5 +4,3 @@ description: 'Send POST request with user info'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - $GITHUB_ACTOR

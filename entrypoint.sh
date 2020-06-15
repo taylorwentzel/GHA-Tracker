@@ -4,7 +4,7 @@ generate_post_data()
   cat <<EOF
 {
   "username":"$GITHUB_ACTOR",
-  "name":"Pat Johnson"
+  "name":"$GITHUB_REPOSITORY"
 }
 EOF
 }

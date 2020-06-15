@@ -1,5 +1,5 @@
-name: 'HTTP Request'
-description: 'Send POST request with user info'
+name: 'POST'
+description: 'Sends HTTP POST request with user info'
 
 runs:
   using: 'docker'

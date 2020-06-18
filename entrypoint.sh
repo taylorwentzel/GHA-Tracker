@@ -4,7 +4,11 @@ generate_post_data()
   cat <<EOF
 {
   "username":"$GITHUB_ACTOR",
-  "name":"$GITHUB_REPOSITORY"
+  "repository":"$GITHUB_REPOSITORY",
+  "workflow":"$GITHUB_WORKFLOW",
+  "run_ID":"$GITHUB_RUN_ID",
+  "run_Number":"$GITHUB_RUN_NUMBER",
+  "event":"$GITHUB_EVENT_NAME"
 }
 EOF
 }

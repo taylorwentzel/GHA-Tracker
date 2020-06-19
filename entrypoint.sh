@@ -1,7 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-echo "short log printing"
+echo 'short log printing'
 git shortlog
 shortlog= $(git shortlog)
 echo $shortlog

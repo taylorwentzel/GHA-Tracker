@@ -1,4 +1,15 @@
 #!/bin/sh -l
+#Testing git log
+set -e
+
+echo "#################################################"
+echo "Starting the git Action"
+
+sh -c "git log"
+
+echo "#################################################"
+echo "Completed the git Action"
+
 generate_post_data()
 {
   cat <<EOF

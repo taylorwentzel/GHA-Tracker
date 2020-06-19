@@ -4,7 +4,7 @@ set -e
 echo 'print directly'
 git log
 echo 'print from variable'
-shortlog=$(git log 2>&1)
+shortlog=$(git log)
 echo "$shortlog"
 generate_post_data()
 {

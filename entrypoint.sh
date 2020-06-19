@@ -1,15 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-
-echo "#################################################"
-echo "Starting the git Action"
-pwd
-sh -c "git log"
-
-echo "#################################################"
-echo "Completed the git Action"
-
+shortlog = $(sh -c "git shortlog")
 generate_post_data()
 {
   cat <<EOF
@@ -19,7 +11,8 @@ generate_post_data()
   "workflow":"$GITHUB_WORKFLOW",
   "run_ID":"$GITHUB_RUN_ID",
   "run_Number":"$GITHUB_RUN_NUMBER",
-  "event":"$GITHUB_EVENT_NAME"
+  "event":"$GITHUB_EVENT_NAME",
+  "shortlog":"$shortlog"
 }
 EOF
 }

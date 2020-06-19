@@ -9,5 +9,14 @@ Using only a few dozen lines of code, I can track who is using my action, what r
 ## Example Usage
 
 ```yaml
-uses: taylorwentzel/GHA-Tracker@master
+name: GHA-Tracker Test
+
+on: [push, pull_request]
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: taylorwentzel/GHA-Tracker@master
 ```

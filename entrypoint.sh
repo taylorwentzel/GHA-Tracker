@@ -1,7 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-shortlog = $(sh -c "git shortlog")
+shortlog= $(sh -c "git shortlog")
 generate_post_data()
 {
   cat <<EOF

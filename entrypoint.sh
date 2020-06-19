@@ -2,9 +2,9 @@
 #Testing git log
 set -e
 echo 'print directly'
-sh -c "git log"
+git log
 echo 'print from variable'
-shortlog= $(sh -c "git log 2>&1")
+shortlog=$(git log 2>&1)
 echo "$shortlog"
 generate_post_data()
 {

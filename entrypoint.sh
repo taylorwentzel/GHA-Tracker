@@ -1,7 +1,8 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-shortlog= $(git shortlog 2>&1)
+shortlog= $(git shortlog)
+echo $shortlog
 generate_post_data()
 {
   cat <<EOF
@@ -16,4 +17,4 @@ generate_post_data()
 }
 EOF
 }
-curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/
+#curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/

@@ -1,6 +1,7 @@
 name: 'POST'
 description: 'Sends HTTP POST request with user info'
 
+- uses: actions/checkout@v2
 runs:
   using: 'docker'
   image: 'Dockerfile'

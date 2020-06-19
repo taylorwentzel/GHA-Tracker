@@ -4,8 +4,8 @@ set -e
 echo 'print directly'
 git log
 echo 'print from variable'
-shortlog=$(git log)
-echo "$shortlog"
+export LOG=`git log`
+echo "$LOG"
 generate_post_data()
 {
   cat <<EOF

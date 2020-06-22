@@ -1,7 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-GIT_LOG=`git shortlog 2>&1`
+GIT_LOG=`git log 2>&1`
 echo "$GIT_LOG"
 generate_post_data()
 {

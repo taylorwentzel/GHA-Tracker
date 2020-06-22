@@ -1,11 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-echo 'print directly'
-git log
-echo 'print from variable'
 GIT_LOG=`git log`
-echo "$GIT_LOG"
 generate_post_data()
 {
   cat <<EOF
@@ -16,8 +12,8 @@ generate_post_data()
   "run_ID":"$GITHUB_RUN_ID",
   "run_Number":"$GITHUB_RUN_NUMBER",
   "event":"$GITHUB_EVENT_NAME",
-  "shortlog":"$shortlog"
+  "shortlog":"$GIT_Log"
 }
 EOF
 }
-#curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/
+curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/

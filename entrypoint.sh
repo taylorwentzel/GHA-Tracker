@@ -1,10 +1,11 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-echo 'short log printing'
-git shortlog
-shortlog= $(git shortlog)
-echo $shortlog
+echo 'print directly'
+git log
+echo 'print from variable'
+GIT_LOG=`git log`
+echo "$GIT_LOG"
 generate_post_data()
 {
   cat <<EOF

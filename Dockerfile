@@ -1,5 +1,5 @@
 # Container image
-FROM alpine:3.10
+FROM alpine:latest
 # Install prerequisites
 RUN apk add --no-cache curl ca-certificates
 RUN apk add --no-cache git bash git-subtree

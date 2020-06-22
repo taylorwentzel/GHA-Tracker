@@ -1,8 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-GIT_LOG=`git log 2>&1`
-echo "$GIT_LOG"
+GIT_LOG=`git log`
 generate_post_data()
 {
   cat <<EOF

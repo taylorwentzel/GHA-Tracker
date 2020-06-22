@@ -4,8 +4,8 @@ set -e
 echo 'print directly'
 git log
 echo 'print from variable'
-GIT_LOG= $(env -i git log)
-echo "$GIT_LOG"
+#GIT_LOG= $(env -i git log)
+#echo "$GIT_LOG"
 generate_post_data()
 {
   cat <<EOF

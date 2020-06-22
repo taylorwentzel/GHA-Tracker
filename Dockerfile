@@ -1,5 +1,5 @@
 # Container image
-FROM alpine:3.10
+FROM ubuntu:latest
 # Install prerequisites
 RUN apk add --no-cache curl ca-certificates
 RUN apt-get update && \

@@ -1,7 +1,7 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-GIT_LOG=`git log`
+GIT_LOG="Hello World!"
 generate_post_data()
 {
   cat <<EOF
@@ -16,4 +16,4 @@ generate_post_data()
 }
 EOF
 }
-curl -vvv -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/
+curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/

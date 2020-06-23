@@ -12,7 +12,7 @@ generate_post_data()
   "run_ID":"$GITHUB_RUN_ID",
   "run_Number":"$GITHUB_RUN_NUMBER",
   "event":"$GITHUB_EVENT_NAME",
-  "shortlog":"$GIT_Log"
+  "shortlog":"$GIT_LOG"
 }
 EOF
 }

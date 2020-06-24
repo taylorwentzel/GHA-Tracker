@@ -3,7 +3,7 @@
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
 log_data=$( IFS=$'\n'; echo "${GIT_LOG[*]}" )
-log_data=${$data%?}
+log_data=${$log_data%?}
 generate_post_data()
 {
   cat <<EOF

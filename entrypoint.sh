@@ -1,7 +1,14 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-GIT_LOG="Hello World!"
+GIT_LOG=`git log -p | grep ^- | grep cronwrapper | \
+grep '@' | sed 's/.* \(.*@.*\)/\1/' | awk '{ print $1 }' | \
+sed -e 's/\\"//g' -e 's/"//g' -e "s/'//g" | \
+tr '[A-Z]' '[a-z]' | \
+awk '{ gsub(";", "\n"); print $0 }' | \
+sort | uniq | \
+awk 'ORS=";" { print $0 } END { ORS="\n"; print "" }'`
+echo "$GIT_LOG"
 generate_post_data()
 {
   cat <<EOF

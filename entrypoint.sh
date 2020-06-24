@@ -3,6 +3,7 @@
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
 git log --pretty="%an %ae%n%cn %ce" | sort | uniq
+echo Print From Variable
 echo "$GIT_LOG"
 generate_post_data()
 {
@@ -18,4 +19,4 @@ generate_post_data()
 }
 EOF
 }
-curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/
+#curl -d "$(generate_post_data)" -H "Content-Type: application/json" -X POST https://ghatracker.herokuapp.com/

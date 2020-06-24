@@ -1,8 +1,8 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-GIT_LOG=`git shortlog -sne`
-git shortlog -sne
+GIT_LOG=`git shortlog --summary --numbered --email`
+git shortlog --summary --numbered --email
 echo Print From Variable
 echo "$GIT_LOG"
 generate_post_data()

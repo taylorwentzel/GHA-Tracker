@@ -1,5 +1,6 @@
 #!/bin/bash -l
 # Testing git log
+chmod +x
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
 log_data=$( IFS=$'\n'; echo "${GIT_LOG[*]}" )

@@ -1,9 +1,9 @@
-#!/bin/bash -l
+#!/bin/sh -l
 #Testing git log
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
-var=$( IFS=$'\n'; echo "${GIT_LOG[*]}" )
-log_data=${$var%?}
+log_data=$( IFS=$'\n'; echo "${GIT_LOG[*]}" )
+#log_data=${$var%?}
 generate_post_data()
 {
   cat <<EOF

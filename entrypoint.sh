@@ -1,7 +1,8 @@
 #!/bin/sh -l
 #Testing git log
 set -e
-GIT_LOG=`git shortlog --summary --numbered --email`
+GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
+git log --pretty="%an %ae%n%cn %ce" | sort | uniq
 echo "$GIT_LOG"
 generate_post_data()
 {

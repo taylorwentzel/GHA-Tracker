@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash -l
 #Testing git log
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`

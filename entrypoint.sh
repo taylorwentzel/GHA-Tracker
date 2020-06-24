@@ -3,8 +3,8 @@
 chmod +x
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
-log_data=$( IFS=$'\n'; echo "${GIT_LOG[*]}" )
-
+function join { local IFS="$1"; shift; echo "$*"; }
+log_data=$(join , ${GIT_LOG[@]})
 generate_post_data()
 {
   cat <<EOF

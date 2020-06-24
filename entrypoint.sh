@@ -2,9 +2,8 @@
 #Testing git log
 set -e
 GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
-git log --pretty="%an %ae%n%cn %ce" | sort | uniq
-echo Print From Variable
-echo "$GIT_LOG"
+log_data=$( IFS=$'\n'; echo "${GIT_LOG[*]}" )
+log_data=${$data%?}
 generate_post_data()
 {
   cat <<EOF
@@ -15,7 +14,7 @@ generate_post_data()
   "run_ID":"$GITHUB_RUN_ID",
   "run_Number":"$GITHUB_RUN_NUMBER",
   "event":"$GITHUB_EVENT_NAME",
-  "shortlog":"$GIT_LOG"
+  "shortlog":"$log_data"
 }
 EOF
 }

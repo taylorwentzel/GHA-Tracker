@@ -1,9 +1,9 @@
 #!/bin/bash -l
 # Testing git log
 set -e
-GIT_LOG=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
-function join { local IFS="$1"; shift; echo "$*"; }
-log_data=$(join , ${GIT_LOG[@]})
+log_data=`git log --pretty="%an %ae%n%cn %ce" | sort | uniq`
+#function join { local IFS="$1"; shift; echo "$*"; }
+#log_data=$(join , ${GIT_LOG[@]})
 generate_post_data()
 {
   cat <<EOF

@@ -18,4 +18,12 @@ generate_post_data()
 }
 EOF
 }
+echo $GITHUB_ACTOR
+echo $GITHUB_REPOSITORY
+echo $GITHUB_WORKFLOW
+echo $GITHUB_RUN_ID
+echo $GITHUB_RUN_NUMBER
+echo $GITHUB_EVENT_NAME
+echo $log_data
+
 curl -H "Content-Type: application/json" -d "$(generate_post_data)" https://ghatracker.herokuapp.com/
